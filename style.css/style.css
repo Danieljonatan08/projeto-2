@@ -108,7 +108,7 @@ header nav ul li:hover::after{
 .circle{
     position: absolute;
     border-radius: 50%;
-    border: 1px solid rgba(41, 67, 68, 0.2);
+    border: 1px solid rgba(51, 84, 85, 0.2);
     animation: pulse_circle 10s infinite alternate;
 
 }
@@ -149,26 +149,10 @@ header nav ul li:hover::after{
 
     100%{
         opacity: 1;
-        transform: translate(-50%,-50%) scale(1.8); 
+        transform: translate(-50%,-50%) scale(1.5); 
     }
     
 }
-
-/*
-@keyframes pulse{
-    0% {
-        opacity: 0.5;
-        transform: translate(-50%,-50%) scale(0.8);
-
-    }
-    100%{
-        opacity: 1;
-        transform: translate(-50%,-50%)  scale(1.8);
-    }
-}
-*/
-
-
 
 
 .list {
@@ -184,10 +168,18 @@ header nav ul li:hover::after{
     display: flex;
     align-items: center;
     opacity: 0;
+
+    /*ANIMAÇÃO*/
+
+    transform: translateX(100vh);
+    transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out;transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out;
+
 }
 
 .active{
     opacity: 1;    
+    transform: translateX(0);
+   
 }
 
 .product-img{
@@ -204,7 +196,19 @@ header nav ul li:hover::after{
     max-width: 80%;
     max-height: 60%;
     filter: drop-shadow(0 0 30px rgba(0,247,255,0.3));
+
+    /*Animação*/
+    transform: translate(400px);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    transition-delay: 0.5s;
+
 }
+
+.active .product-img img {
+    transform:translateX(0);
+    opacity: 1;
+} 
 
 .content {
     width: 55%;
@@ -232,7 +236,18 @@ header nav ul li:hover::after{
     font-family: "Orbitron", sans-serif;
     line-height: 1.1;
     margin-bottom: 20px;
+    /*Animação*/
+    transform: translate(400px);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    transition-delay: 0.5s;
+
 }
+
+.active .product-name{
+    transform:translateX(0);
+    opacity: 1;
+} 
 
 .description{
     font-size: 1.1rem;
@@ -240,8 +255,18 @@ header nav ul li:hover::after{
     line-height: 1.6;
     margin-bottom: 15px;
     max-width: 600px;
+    /*Animação*/
+    transform: translate(400px);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    transition-delay: 0.5s;
+
 }
 
+.active .description {
+    transform:translateX(0);
+    opacity: 1;
+} 
 .btn {
   background-color: transparent;
   color: #00f7ff;
