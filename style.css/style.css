@@ -160,6 +160,7 @@ header nav ul li:hover::after{
     height: 100%;
     margin: 0 auto;
     position: relative;
+    z-index: 1;
 }
 
 .item{
@@ -173,14 +174,18 @@ header nav ul li:hover::after{
 
     transform: translateX(100vh);
     transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out;transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out;
-
+    pointer-events: none;
+    z-index: 0;
 }
 
 .active{
     opacity: 1;    
     transform: translateX(0);
+    pointer-events: auto;
+    z-index: 2;
    
 }
+
 
 .product-img{
     width: 45%;
@@ -365,6 +370,5 @@ header nav ul li:hover::after{
     background-color: #00f7ff;
     box-shadow: rgba(0, 247, 255, 0.5);
 }
-
 
 

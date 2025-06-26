@@ -34,6 +34,14 @@ function update(direction){
 
 
 }
+
+function resetTimer(direction) {
+  clearInterval(timer); // Para o timer atual
+  update(direction);    // Atualiza o slide manualmente
+  timer = setInterval(() => update(1), 5000); // Reinicia o ciclo
+}
+
+
 let active = 0;
 const total = items.length
 let timer;
@@ -52,14 +60,5 @@ timer = setInterval(() => {
 
 
 
-
-prevButton.addEventListener('click',() => {
-    update(-1)
-
-})
-
-nextButton.addEventListener('click',() => {
-    update(1)
-
-
-})
+prevButton.addEventListener('click', () => resetTimer(-1));
+nextButton.addEventListener('click', () => resetTimer(1));
